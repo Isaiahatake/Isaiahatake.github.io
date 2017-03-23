@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ 	<meta charset="utf-8">
+  <title>Web Portfolio: Graphics Page</title>
+  <link type="text/css" rel="stylesheet" 
+		href="_assets/css/mystyle.css" 
+		media="screen">
+ </head>
+ <body>
+
+   <h1>Web Portfolio: Graphics</h1>
+
+<nav>
+ 			<ul>
+ 				<li><a href="home.html">Home</a></li>
+ 				<li><a href="accessibility.html">Accessibility</a></li>
+ 				<li><a href="graphics.html">Graphics</a></li>
+ 				<li><a href="index.html">Index</a></li>
+ 				<li><a href="js.html">Javascript</a></li>
+ 				<li><a href="tools.html">Tools</a></li>
+ 				<li><a href="usability.html">Usability</a></li>
+ 				<li><a href="video.html">Video</a></li>
+			</ul>
+		</nav>
+</nav>
+  <meta charset="utf-8">
+  <title>Web Portfolio: Javascript Page</title>
+<script>
+function toggleClock() { 
+    // get the clock 
+    var myClock = document.getElementById('clock');
+
+    // get the current value of the clock's display property 
+    var displaySetting = myClock.style.display;
+
+    // also get the clock button, so we can change what it says 
+    var clockButton = document.getElementById('clockButton');
+        
+    // now toggle the clock and the button text, depending on current state
+    if (displaySetting == 'block') { 
+      // clock is visible. hide it
+      myClock.style.display = 'none';
+      // change button text
+      clockButton.innerHTML = 'Show clock';
+    }
+    else { 
+      // clock is hidden. show it 
+      myClock.style.display = 'block';
+      // change button text
+      clockButton.innerHTML = 'Hide clock';
+    }
+  }  
+	function showalert() {
+		var myText = "woah";
+		alert (myText);
+	}
+	 function updateTime() { 
+
+  	// get all parts of the current time
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+      if (minutes < 10) { 
+    minutes = '0' + minutes;
+  }
+  if (seconds < 10) { 
+    seconds = '0' + seconds;
+  }       
+
+  // get time of day (am or pm) 
+  if (hours >= 12 && hours < 24) { 
+    var timeOfDay = 'pm';
+  }
+  else { 
+    var timeOfDay = 'am'; 
+  }
+        
+  // convert hours from 24-hour time to 12-hour time
+  if (hours > 12) { 
+    hours = hours - 12;
+  }
+
+    // splice them together into a character string named "currentTime"
+    var currentTime = hours + ':' + minutes + ':' + seconds + ' ' + timeOfDay;    
+    
+    // get the clock div 
+    var myClock = document.getElementById('clock');
+    
+    // write the currentTime string to the clock div
+    myClock.innerHTML = currentTime;
+  }
+
+</script>
+
+
+<link type="text/css" rel="stylesheet" 
+		href="_assets/css/mystyle.css" 
+		media="screen">
+ </head>
+ <body onload="setInterval('updateTime()',1000)">
+ 	<link rel="shortcut icon" href="_assets/images/favicon.png">
+<button onclick="toggleClock()" id="clockButton">Show clock</button>
+
+<div id="clock"></div>
+
+
+</div>
+
+<div class="content">
+  <div class="post single post-255 page type-page status-publish hentry no-featured-image">
+<!-- /post-header section -->
+    <div class="post-content section-inner">
+      <section class="main-content">
+                <form class="cart" id="cart-hplus">
+                <div class="item">
+                    <h2>Deluxe Album</h2>
+                    
+        
+                    <div class="info">
+                    <span>Price: $25.00 per deluxe album</span>
+                    </div>
+        
+                    <div class="order">
+                    <label for="txt-q-bball">Quantity:</label>
+                    <input type="number" min="0" id="txt-q-bball" size="3" placeholder="0">
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <h2>Albums</h2>
+                   
+        
+                    <div class="info">
+                    <span>Price: $20.00 per album</span>
+                    </div>
+        
+                    <div class="order">
+                    <label for="txt-q-jersey">Quantity :</label>
+                    <input type="number" min="0" id="txt-q-jersey" size="3" placeholder="0">
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <h2>Songs</h2>
+                    
+        
+                    <div class="info">
+                    <span>Price: $2.00 per song</span>
+                    </div>
+        
+                    <div class="order">
+                    <label for="txt-q-power">Quantity:</label>
+                    <input type="number" min="0" id="txt-q-power" size="3" placeholder="0">
+                    </div>
+                </div>
+    
+                <div id="summary">
+                    <h2>Order</h2>
+                    
+                    <div class="group state">
+                        <label for="s-state">State is required:</label>
+                        <select id="s-state">
+                            <option value="">- select -</option>
+                            <option value="CA">California (7.5% tax)</option>
+                            <option value="NV">Nevada</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="NY">New York</option>
+                        </select>
+                    </div>
+        
+                    <div class="group method">
+                        <label for="r-method-pickup">Shipping and Handling:</label><br>
+                        <input type="radio" value="pickup" name="r_method" id="r-method-pickup" checked> <label for="r-method-pickup">Pickup (No extra cost)</label><br>
+            
+                        <input type="radio" value="usps" name="r_method" id="r-method-usps"> <label for="r-method-usps">US Mail ($2.50 per item)</label><br>
+            
+                        <input type="radio" value="ups" name="r_method" id="r-method-ups"> <label for="r-method-ups">FedEx ($4.00 per item)</label>
+                    </div>
+        
+                    <div class="group special">
+                        <label for="c-special-gift">Special:</label><br>
+                        <input type="checkbox" value="YES" name="c-special-gift" id="c-special-gift"> <label for="c-special-gift">This is a gift (Wrap Product)</label><br>
+            
+                        <input type="checkbox" value="YES" name="c-special-email" id="c-special-email"> <label for="c-special-email">Sign up for our magazine</label><br>
+            
+                       
+                    </div>
+        
+                    <div class="group notes">
+                        <label for="txt-notes">Please give us feedback!:</label><br>
+                        
+                        <textarea name="txt-notes" id="txt-notes" rows="2" placeholder="FeedBack "></textarea>
+                    </div>
+        
+                    <div class="group calc">
+                        <p>
+                        <label for="btn-estimate">Total:</label><br>
+                        <input type="submit" value="Estimate Total" id="btn-estimate">
+                        <input type="text" id="txt-estimate" placeholder="$0.00">
+                        </p>
+            
+                        <div id="results"></div>
+                    </div>
+                </div>
+        
+                </form>
+      </section>
+      <div class="clear"></div>
+    </div>
+  </div>
+<!-- /post -->
+  <div class="clear">
+  </div>
+</div>
+<!-- /content -->
+<div class="footer section medium-padding bg-graphite">
+  <div class="section-inner row">
+    <div class="column column-1 one-third">
+      <div class="widgets">
+        <div class="  widget widget_sow-editor">
+          <div class="widget-content">
+            <div class="so-widget-sow-editor so-widget-sow-editor-base">
+              <div class="siteorigin-widget-tinymce textwidget">
+                
+    <div class="clear">
+    </div>
+  </div>
+ </body>
+</html>
